@@ -18,15 +18,39 @@ header {
     background-color: gray;
     padding: 10px;
     color: white;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
 header h1 {
-    border: 1px dotted black;
-    text-shadow: 1px 1px 0px black;
+    /*border: 1px dotted black;*/
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.39);
+    flex: 0 0 200px;
 }
 
 header  nav {
-    border: 1px dotted black;
+    /*border: 1px dotted black;*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+
+header a {
+    background-color: rgb(0, 0, 0);
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+header a:hover {
+    background-color: white;
+    color: black;
+    transition: background-color .5s;
 }
 
 main {
@@ -39,4 +63,18 @@ main {
 
 main p {
     text-indent: 30px;
+}
+
+@media screen and (max-width: 767px){
+    header, header nav {
+        flex-flow: column nowrap;
+    }
+    header h1 {
+        flex-basis: 50px;
+    }
+
+    header a {
+        width: 90vw;
+        text-align: center;
+    }
 }
