@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="estilos/style.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
+<body onresize="mudouTamanho()">
     <header>
         <h1>Meu site</h1>
-        <nav>
+        <i class="material-icons" id="burger" onclick="clickMenu()">menu</i>
+        <nav id="itens">
             <a href="#">Opção 1</a>
             <a href="#">Opção 2</a>
             <a href="#">Opção 3</a>
@@ -26,5 +27,25 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto ullam sed tenetur delectus molestiae, perferendis reprehenderit omnis tempora accusamus atque error temporibus natus unde, illo mollitia recusandae fugiat minus eligendi. Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro adipisci consectetur magni quibusdam. Nisi harum eum, iure, incidunt facere iste doloremque libero voluptatum velit cum amet. Voluptatem ipsa corrupti officiis?</p>
         </section>
     </main>
+    <script>
+        function mudouTamanho() {
+            if (window.innerWidth >= 768){
+                itens.style.display = 'flex'
+                burger.style.display = 'none'
+            } else {
+                itens.style.display = 'none'
+                burger.style.display = 'block'
+            }
+        }
+
+        function clickMenu(){
+            if (itens.style.display == 'none'){
+                itens.style.display = 'flex'
+            } else {
+                itens.style.display = 'none'
+            }
+        }
+
+    </script>
 </body>
 </html>
